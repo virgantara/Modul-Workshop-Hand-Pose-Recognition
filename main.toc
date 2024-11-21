@@ -27,9 +27,3 @@
 \contentsline {section}{\numberline {3.5}Pose Classification}{16}{}%
 \contentsline {section}{\numberline {3.6}Pose Inference}{16}{}%
 \contentsline {chapter}{\numberline {4}Fundamentals of Hand Pose Recogntion}{17}{}%
-\contentsline {section}{\numberline {4.1}Understanding Pose Recognition}{17}{}%
-\contentsline {section}{\numberline {4.2}Real-Time Hand Tracking}{17}{}%
-\contentsline {section}{\numberline {4.3}Landmark Detection}{18}{}%
-\contentsline {section}{\numberline {4.4}Model architecture}{18}{}%
-\contentsline {section}{\numberline {4.5}Pose Estimation in 3D}{19}{}%
-\contentsline {section}{\numberline {4.6}Multi-Hand Support}{19}{}%
