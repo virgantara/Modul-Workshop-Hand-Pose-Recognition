@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{9427388}
+Q.~Gao, Y.~Chen, Z.~Ju, and Y.~Liang, ``Dynamic hand gesture recognition based
+  on 3d hand pose estimation for human–robot interaction,'' {\em IEEE Sensors
+  Journal}, vol.~22, no.~18, pp.~17421--17430, 2022.
+
+\bibitem{9609102}
+C.~Li, S.~Li, Y.~Gao, X.~Zhang, and W.~Li, ``A two-stream neural network for
+  pose-based hand gesture recognition,'' {\em IEEE Transactions on Cognitive
+  and Developmental Systems}, vol.~14, no.~4, pp.~1594--1603, 2022.
+
+\bibitem{ZHANG20242399}
+Y.~Zhang and X.~Jiang, ``Recent advances on deep learning for sign language
+  recognition,'' {\em CMES - Computer Modeling in Engineering and Sciences},
+  vol.~139, no.~3, pp.~2399--2450, 2024.
+
+\bibitem{Yuniarno_2024}
+E.~M. Yuniarno, ``Sign language recognition based on geometric features using
+  deep learning,'' {\em Jurnal Nasional Pendidikan Teknik Informatika :
+  JANAPATI}, vol.~13, p.~338–348, Jul. 2024.
+
+\bibitem{9506135}
+Y.~Yin, C.~McCarthy, and D.~Rezazadegan, ``Real-time 3d hand-object pose
+  estimation for mobile devices,'' in {\em 2021 IEEE International Conference
+  on Image Processing (ICIP)}, pp.~3288--3292, 2021.
+
+\bibitem{SONG2021103055}
+L.~Song, G.~Yu, J.~Yuan, and Z.~Liu, ``Human pose estimation and its
+  application to action recognition: A survey,'' {\em Journal of Visual
+  Communication and Image Representation}, vol.~76, p.~103055, 2021.
+
+\bibitem{10731943}
+C.~Zhang, X.~Liang, D.~Fan, J.~Chen, B.~Zhang, B.~Wu, and D.~Zhang, ``Hgaiqa: A
+  novel hand-geometry-aware image quality assessment framework for contactless
+  palmprint recognition,'' {\em IEEE Transactions on Instrumentation and
+  Measurement}, vol.~73, pp.~1--13, 2024.
+
+\bibitem{9426433}
+S.~Jiang, P.~Kang, X.~Song, B.~P. Lo, and P.~B. Shull, ``Emerging wearable
+  interfaces and algorithms for hand gesture recognition: A survey,'' {\em IEEE
+  Reviews in Biomedical Engineering}, vol.~15, pp.~85--102, 2022.
+
+\bibitem{LIU2024128049}
+Y.~Liu, C.~Qiu, and Z.~Zhang, ``Deep learning for 3d human pose estimation and
+  mesh recovery: A survey,'' {\em Neurocomputing}, vol.~596, p.~128049, 2024.
+
+\end{thebibliography}
