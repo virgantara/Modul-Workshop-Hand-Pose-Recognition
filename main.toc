@@ -4,8 +4,22 @@
 \contentsline {section}{\numberline {1.3}Hand Pose Recognition Implementation in Medical}{2}{}%
 \contentsline {chapter}{\numberline {2}Fundamentals of Hand Pose Recogntion}{3}{}%
 \contentsline {section}{\numberline {2.1}Understanding Pose Recognition}{3}{}%
-\contentsline {section}{\numberline {2.2}Key concepts Real-Time Hand Tracking}{3}{}%
+\contentsline {section}{\numberline {2.2}Real-Time Hand Tracking}{3}{}%
 \contentsline {section}{\numberline {2.3}Landmark Detection}{4}{}%
 \contentsline {section}{\numberline {2.4}Model architecture}{4}{}%
-\contentsline {section}{\numberline {2.5}Pose Estimation in 3D}{4}{}%
+\contentsline {section}{\numberline {2.5}Pose Estimation in 3D}{5}{}%
 \contentsline {section}{\numberline {2.6}Multi-Hand Support}{5}{}%
+\contentsline {chapter}{\numberline {3}Fundamentals of Hand Pose Recogntion}{7}{}%
+\contentsline {section}{\numberline {3.1}Understanding Pose Recognition}{7}{}%
+\contentsline {section}{\numberline {3.2}Real-Time Hand Tracking}{7}{}%
+\contentsline {section}{\numberline {3.3}Landmark Detection}{8}{}%
+\contentsline {section}{\numberline {3.4}Model architecture}{8}{}%
+\contentsline {section}{\numberline {3.5}Pose Estimation in 3D}{9}{}%
+\contentsline {section}{\numberline {3.6}Multi-Hand Support}{9}{}%
+\contentsline {chapter}{\numberline {4}Fundamentals of Hand Pose Recogntion}{11}{}%
+\contentsline {section}{\numberline {4.1}Understanding Pose Recognition}{11}{}%
+\contentsline {section}{\numberline {4.2}Real-Time Hand Tracking}{11}{}%
+\contentsline {section}{\numberline {4.3}Landmark Detection}{12}{}%
+\contentsline {section}{\numberline {4.4}Model architecture}{12}{}%
+\contentsline {section}{\numberline {4.5}Pose Estimation in 3D}{13}{}%
+\contentsline {section}{\numberline {4.6}Multi-Hand Support}{13}{}%
