@@ -10,20 +10,23 @@
 \contentsline {section}{\numberline {2.5}Model architecture}{4}{}%
 \contentsline {section}{\numberline {2.6}Pose Estimation in 3D}{5}{}%
 \contentsline {section}{\numberline {2.7}Multi-Hand Support}{5}{}%
-\contentsline {chapter}{\numberline {3}Hand Pose Recogntion using Deep Learning}{7}{}%
-\contentsline {section}{\numberline {3.1}Dataset Acquisition}{7}{}%
-\contentsline {section}{\numberline {3.2}Pose Estimation}{8}{}%
-\contentsline {subsection}{\numberline {3.2.1}Import required Python libraries}{9}{}%
-\contentsline {subsection}{\numberline {3.2.2}MediaPipe Initialization}{9}{}%
-\contentsline {subsection}{\numberline {3.2.3} Webcam Access and Directory Setup}{10}{}%
-\contentsline {subsection}{\numberline {3.2.4}Landmark Extraction}{10}{}%
-\contentsline {section}{\numberline {3.3}Geometric Feature Extraction}{10}{}%
-\contentsline {subsection}{\numberline {3.3.1}Function Definition and Initialization}{10}{}%
-\contentsline {subsection}{\numberline {3.3.2}Webcam Initialization and Directory Setup}{11}{}%
-\contentsline {subsection}{\numberline {3.3.3}Countdown Timer and Frame Processing}{11}{}%
-\contentsline {subsection}{\numberline {3.3.4}Frame Capture and Saving}{13}{}%
-\contentsline {subsection}{\numberline {3.3.5}Cleanup}{14}{}%
-\contentsline {section}{\numberline {3.4}Model Architecture}{15}{}%
-\contentsline {section}{\numberline {3.5}Pose Classification}{16}{}%
-\contentsline {section}{\numberline {3.6}Pose Inference}{16}{}%
-\contentsline {chapter}{\numberline {4}Fundamentals of Hand Pose Recogntion}{17}{}%
+\contentsline {chapter}{\numberline {3}Hand Pose Feature Representation}{7}{}%
+\contentsline {section}{\numberline {3.1}Geometric Feature}{7}{}%
+\contentsline {section}{\numberline {3.2}Normalized Geometric Feature}{8}{}%
+\contentsline {section}{\numberline {3.3}Geometric Feature Joint}{9}{}%
+\contentsline {chapter}{\numberline {4}Hand Pose Recogntion using Deep Learning}{11}{}%
+\contentsline {section}{\numberline {4.1}Dataset Acquisition}{11}{}%
+\contentsline {section}{\numberline {4.2}Pose Estimation}{12}{}%
+\contentsline {subsection}{\numberline {4.2.1}Import required Python libraries}{13}{}%
+\contentsline {subsection}{\numberline {4.2.2}MediaPipe Initialization}{13}{}%
+\contentsline {subsection}{\numberline {4.2.3} Webcam Access and Directory Setup}{14}{}%
+\contentsline {subsection}{\numberline {4.2.4}Landmark Extraction}{14}{}%
+\contentsline {section}{\numberline {4.3}Geometric Feature Extraction}{14}{}%
+\contentsline {subsection}{\numberline {4.3.1}Function Definition and Initialization}{14}{}%
+\contentsline {subsection}{\numberline {4.3.2}Webcam Initialization and Directory Setup}{15}{}%
+\contentsline {subsection}{\numberline {4.3.3}Countdown Timer and Frame Processing}{15}{}%
+\contentsline {subsection}{\numberline {4.3.4}Frame Capture and Saving}{17}{}%
+\contentsline {subsection}{\numberline {4.3.5}Cleanup}{18}{}%
+\contentsline {section}{\numberline {4.4}Model Architecture}{19}{}%
+\contentsline {section}{\numberline {4.5}Pose Classification}{20}{}%
+\contentsline {section}{\numberline {4.6}Pose Inference}{20}{}%
