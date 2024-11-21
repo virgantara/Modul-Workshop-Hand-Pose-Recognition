@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {1.1}Importance of Hand Pose Recognition}{1}{}%
 \contentsline {section}{\numberline {1.2}Challenges in Hand Pose Recognition}{2}{}%
 \contentsline {section}{\numberline {1.3}Hand Pose Recognition Implementation in Medical}{2}{}%
-\contentsline {chapter}{\numberline {2}Fundamentals of Hand Pose Recogntion with MediaPipe}{3}{}%
+\contentsline {chapter}{\numberline {2}Fundamentals of Hand Pose Recognition with MediaPipe}{3}{}%
 \contentsline {section}{\numberline {2.1}Understanding Pose Recognition}{3}{}%
 \contentsline {section}{\numberline {2.2}MediaPipe}{3}{}%
 \contentsline {section}{\numberline {2.3}Real-Time Hand Tracking}{3}{}%
@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {3.1}Geometric Feature}{7}{}%
 \contentsline {section}{\numberline {3.2}Normalized Geometric Feature}{8}{}%
 \contentsline {section}{\numberline {3.3}Geometric Feature Joint}{9}{}%
-\contentsline {chapter}{\numberline {4}Hand Pose Recogntion using Deep Learning}{11}{}%
+\contentsline {chapter}{\numberline {4}Hand Pose Recognition using Deep Learning}{11}{}%
 \contentsline {section}{\numberline {4.1}Dataset Acquisition}{11}{}%
 \contentsline {section}{\numberline {4.2}Pose Estimation}{12}{}%
 \contentsline {subsection}{\numberline {4.2.1}Import required Python libraries}{13}{}%
@@ -28,5 +28,9 @@
 \contentsline {subsection}{\numberline {4.3.4}Frame Capture and Saving}{17}{}%
 \contentsline {subsection}{\numberline {4.3.5}Cleanup}{18}{}%
 \contentsline {section}{\numberline {4.4}Model Architecture}{19}{}%
-\contentsline {section}{\numberline {4.5}Pose Classification}{20}{}%
-\contentsline {section}{\numberline {4.6}Pose Inference}{20}{}%
+\contentsline {chapter}{\numberline {5}The Experiments of Hand Pose Recognition}{21}{}%
+\contentsline {section}{\numberline {5.1}Hand Pose Data Training Preparation}{21}{}%
+\contentsline {subsection}{\numberline {5.1.1}Function Parameters}{24}{}%
+\contentsline {section}{\numberline {5.2}Model Training and Evaluation}{28}{}%
+\contentsline {section}{\numberline {5.3}Hand Pose Classification}{31}{}%
+\contentsline {section}{\numberline {5.4}Hand Pose Inference}{31}{}%

@@ -16,7 +16,7 @@
 	language=Python
 }
 
-\chapter{Hand Pose Recogntion using Deep Learning}
+\chapter{Hand Pose Recognition using Deep Learning}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{img/pose_pipeline} % Adjust the width or other parameters as needed
@@ -312,5 +312,3 @@ Finally, the model ends with an output Dense layer:
 This layer has a number of neurons equal to the number of target classes (\verb|num_classes|). The \verb|softmax| activation function converts the raw outputs into probabilities for each class, ensuring that the sum of all probabilities equals 1. This makes it suitable for multi-class classification tasks.
 
 Overall, the model starts with reshaping the input, extracts meaningful features using convolutional layers, flattens the extracted features, and uses dense layers for classification, with dropout for regularization. The final softmax layer outputs class probabilities, making it effective for tasks like hand pose classification or time-series analysis.
-\section{Pose Classification}
-\section{Pose Inference}
