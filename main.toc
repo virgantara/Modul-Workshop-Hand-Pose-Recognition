@@ -2,20 +2,25 @@
 \contentsline {section}{\numberline {1.1}Importance of Hand Pose Recognition}{1}{}%
 \contentsline {section}{\numberline {1.2}Challenges in Hand Pose Recognition}{2}{}%
 \contentsline {section}{\numberline {1.3}Hand Pose Recognition Implementation in Medical}{2}{}%
-\contentsline {chapter}{\numberline {2}Fundamentals of Hand Pose Recogntion}{3}{}%
+\contentsline {chapter}{\numberline {2}Fundamentals of Hand Pose Recogntion with MediaPipe}{3}{}%
 \contentsline {section}{\numberline {2.1}Understanding Pose Recognition}{3}{}%
-\contentsline {section}{\numberline {2.2}Real-Time Hand Tracking}{3}{}%
-\contentsline {section}{\numberline {2.3}Landmark Detection}{4}{}%
-\contentsline {section}{\numberline {2.4}Model architecture}{4}{}%
-\contentsline {section}{\numberline {2.5}Pose Estimation in 3D}{5}{}%
-\contentsline {section}{\numberline {2.6}Multi-Hand Support}{5}{}%
-\contentsline {chapter}{\numberline {3}Fundamentals of Hand Pose Recogntion}{7}{}%
-\contentsline {section}{\numberline {3.1}Understanding Pose Recognition}{7}{}%
-\contentsline {section}{\numberline {3.2}Real-Time Hand Tracking}{7}{}%
-\contentsline {section}{\numberline {3.3}Landmark Detection}{8}{}%
-\contentsline {section}{\numberline {3.4}Model architecture}{8}{}%
-\contentsline {section}{\numberline {3.5}Pose Estimation in 3D}{9}{}%
-\contentsline {section}{\numberline {3.6}Multi-Hand Support}{9}{}%
+\contentsline {section}{\numberline {2.2}MediaPipe}{3}{}%
+\contentsline {section}{\numberline {2.3}Real-Time Hand Tracking}{3}{}%
+\contentsline {section}{\numberline {2.4}Landmark Detection}{4}{}%
+\contentsline {section}{\numberline {2.5}Model architecture}{4}{}%
+\contentsline {section}{\numberline {2.6}Pose Estimation in 3D}{5}{}%
+\contentsline {section}{\numberline {2.7}Multi-Hand Support}{5}{}%
+\contentsline {chapter}{\numberline {3}Hand Pose Recogntion using Deep Learning}{7}{}%
+\contentsline {section}{\numberline {3.1}Dataset Acquisition}{7}{}%
+\contentsline {section}{\numberline {3.2}Pose Estimation}{8}{}%
+\contentsline {subsection}{\numberline {3.2.1}Import required Python libraries}{9}{}%
+\contentsline {subsection}{\numberline {3.2.2}MediaPipe Initialization}{9}{}%
+\contentsline {subsection}{\numberline {3.2.3} Webcam Access and Directory Setup}{9}{}%
+\contentsline {subsection}{\numberline {3.2.4}Landmark Extraction}{10}{}%
+\contentsline {section}{\numberline {3.3}Geometric Feature Extraction}{10}{}%
+\contentsline {section}{\numberline {3.4}Model Architecture}{10}{}%
+\contentsline {section}{\numberline {3.5}Pose Classification}{10}{}%
+\contentsline {section}{\numberline {3.6}Pose Inference}{10}{}%
 \contentsline {chapter}{\numberline {4}Fundamentals of Hand Pose Recogntion}{11}{}%
 \contentsline {section}{\numberline {4.1}Understanding Pose Recognition}{11}{}%
 \contentsline {section}{\numberline {4.2}Real-Time Hand Tracking}{11}{}%

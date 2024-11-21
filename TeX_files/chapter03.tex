@@ -1,32 +1,87 @@
-\chapter{Fundamentals of Hand Pose Recogntion}
-
-\section{Understanding Pose Recognition}
-Pose recognition is analyzing and interpreting objects' physical positions and movements, particularly the human body or hands, to identify specific gestures or actions. In the context of hand pose recognition, the objective is to track and understand the intricate movements and orientations of the hand in a given space. This involves detecting the hand's position, identifying key landmarks, and classifying the overall hand configuration. Pose recognition systems combine advanced computer vision techniques with machine learning models to make predictions, offering applications in sign language interpretation, virtual reality, and human-computer interaction.
-\section{Real-Time Hand Tracking}
-Real-time hand tracking is the ability to detect and monitor hand movements instantaneously. This process relies on high-speed algorithms that process visual data from cameras or sensors to pinpoint the location and orientation of a hand in every frame of a video stream. A significant focus of real-time hand tracking is minimizing latency to ensure the system's responsiveness. Techniques like region-of-interest optimization, GPU acceleration, and lightweight neural networks contribute to achieving this. Real-time tracking is critical for applications such as augmented reality (AR), gaming, and touchless interfaces where seamless interaction is essential.
-\section{Landmark Detection}
-Landmark detection is a core element of hand pose recognition. It involves identifying key points or nodes on a hand, such as joints, knuckles, or fingertips, collectively defining its structure. These landmarks are typically represented in 2D or 3D coordinates, forming the foundation for analyzing hand gestures and poses. Advanced models like Mediapipe Hand and OpenPose leverage machine learning to perform this task efficiently. Landmark detection is critical for understanding hand dynamics, as it provides the data needed for gesture classification, tracking movements, and reconstructing hand positions in 3D space. The hand landmark can be seen in Figure \ref{fig:hand_landmark}.
-
+\chapter{Hand Pose Recogntion using Deep Learning}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=\linewidth]{img/hand_landmarks} % Adjust the width or other parameters as needed
-	\caption{Example of Hand Landmark obtained from Mediapipe}
-	\label{fig:hand_landmark} % Reference the figure in your text using \ref{fig:unique_label}
+	\includegraphics[width=\linewidth]{img/pose_pipeline} % Adjust the width or other parameters as needed
+	\caption{Hand Recognition Pipeline}
+	\label{fig:pose_pipeline} % Reference the figure in your text using \ref{fig:unique_label}
 \end{figure}
 
-\section{Model architecture}
-The model architecture for hand pose recognition typically combines convolutional neural networks (CNNs) for feature extraction with regression or classification layers for predicting hand poses. State-of-the-art models often utilize encoder-decoder frameworks to process input images and generate heatmaps or landmark coordinates. Mediapipe, for instance, uses a pipeline that first detects the hand region and then applies a specialized model to predict precise landmarks. Lightweight and efficient architectures are crucial to ensure real-time performance without compromising accuracy. These models are trained on large datasets to generalize across different hand shapes, orientations, and lighting conditions.
+\section{Dataset Acquisition}
+This code provides a systematic way to acquire a dataset for hand pose recognition using Mediapipe and OpenCV. It captures hand landmarks and saves the corresponding frames from a webcam feed, enabling the creation of a labeled dataset for tasks like training gesture recognition models.
 
-\section{Pose Estimation in 3D}
-Pose estimation in 3D extends the capabilities of 2D models by incorporating depth information to reconstruct hand poses in a three-dimensional space. This process often integrates data from depth sensors or multi-view camera setups to triangulate landmark positions. 3D pose estimation provides more accurate representations of hand gestures, especially in scenarios involving rotations or occlusions. It is beneficial in applications like robotics, where precise hand positioning is required, or virtual reality, where realistic interactions with virtual objects depend on spatial accuracy. Each landmark consists of the following:
+The process begins with the initialization and setup of necessary components. Mediapipe's Hands model is used for detecting and tracking hand landmarks, while OpenCV handles video capture and frame display. Command-line arguments allow customization of parameters such as the dataset path, label name, frame saving rate, maximum frames to save, and a delay before data collection starts. The script ensures that a directory for the dataset is created, organizing the captured data based on the provided label name.
+
+Hand detection and landmark extraction are key steps in the process. The Mediapipe Hands model detects 21 landmarks on each hand, including knuckles and fingertips, and supports tracking up to two hands simultaneously. For every frame captured, the script converts it to RGB format and processes it using Mediapipe. Landmark coordinates are normalized relative to specific reference points, such as the wrist and a finger joint, making the data invariant to variations in hand size and position. The normalized landmarks for both hands are then concatenated into a single array, representing the frame’s hand pose data.
+
+\section{Pose Estimation}
+
+The `create\_dataset` function is a crucial part of the pose estimation process. It facilitates the acquisition of hand pose data by capturing frames from a webcam feed, extracting hand landmarks using Mediapipe's `Hands` solution, and organizing the data into labeled directories. This function serves as the foundation for building datasets tailored to pose estimation tasks, enabling further applications like gesture recognition and motion analysis.
+
+Pose estimation involves detecting and interpreting key hand landmarks in real-time. The function initializes Mediapipe's `Hands` module, which is capable of identifying 21 specific landmarks on each hand, such as fingertips, joints, and the wrist. These landmarks represent the structural configuration of the hand and are essential for understanding its pose. By converting the captured video frames to RGB format and processing them through Mediapipe, the function extracts these landmarks with high precision.
+
+To normalize the landmark data, the function computes positions relative to key reference points—namely, the wrist and a finger joint. This normalization step ensures that the data remains invariant to hand size and camera perspective, enhancing its generalizability for machine learning models. The landmark coordinates for both hands are flattened into a single array, representing the spatial configuration of the hands in each frame.
+
+Beyond pose estimation, the `create\_dataset` function also incorporates real-time feedback and organization. Frames are captured and saved at user-defined intervals, allowing control over the frame rate and total number of frames collected. Each frame is stored in a labeled directory, organized by the name of the gesture or pose being recorded. The overlay of the detected landmarks on the video feed, along with a live counter of saved frames, enhances the usability of the function by providing visual confirmation and progress tracking.
+
+This function exemplifies the integration of pose estimation techniques with practical data collection workflows. It not only extracts meaningful pose information but also structures the data in a format ready for subsequent analysis and model training. This makes it a powerful tool for researchers and developers working on applications in gesture recognition, human-computer interaction, and beyond.
+
+\subsection{Import required Python libraries}
+\begin{verbatim}
+	import cv2
+	import mediapipe as mp
+	import numpy as np
+	from datetime import datetime
+	import os
+	import time
+	import argparse
+\end{verbatim}
+
+\subsection{MediaPipe Initialization}
+\begin{lstlisting}
+	mp_hands = mp.solutions.hands
+	hands = mp_hands.Hands(static_image_mode=False,
+	max_num_hands=2,
+	min_detection_confidence=0.5,
+	min_tracking_confidence=0.5)
+	
+\end{lstlisting}
+
+This part initializes the Mediapipe Hands solution, which is responsible for detecting hand landmarks in video frames. The configuration allows real-time processing of up to two hands per frame, with parameters controlling the confidence thresholds for detection and tracking. This setup ensures accurate and stable landmark recognition during data collection.
+
+\subsection{ Webcam Access and Directory Setup}
+
+\begin{lstlisting}
+cap = cv2.VideoCapture(0)
+save_dir = os.path.join(direktori_path, nama_label)
+if not os.path.exists(save_dir):
+	os.makedirs(save_dir)
+	
+\end{lstlisting}
+
+The webcam is opened using OpenCV’s VideoCapture, which serves as the data source for real-time frame capture. The save\_dir is created dynamically based on the dataset path and label name, ensuring an organized directory structure for storing the collected data.
+
+\subsection{Landmark Extraction}
+\begin{lstlisting}
+def ekstraksi_fitur(frame):
+frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+results = hands.process(frame_rgb)
+height, width, _ = frame.shape
+...
+# Normalization and concatenation of landmarks
+return np.concatenate((left_hand_landmarks.flatten(), right_hand_landmarks.flatten()))
+
+\end{lstlisting}
+
+This function extracts and processes hand landmarks from each frame:
 \begin{enumerate}
-	\item $x$ and $y$: Landmark coordinates normalized to $[0.0, 1.0]$ by the image width and height respectively.
-	\item $z$: Represents the landmark depth with the depth at the midpoint of hips being the origin, and the smaller the value the closer the landmark is to the camera. The magnitude of $z$ uses roughly the same scale as $x$.
-	\item visibility: A value in $[0.0, 1.0]$ indicating the likelihood of the landmark being visible (present and not occluded) in the image.
+	\item Conversion to RGB: Mediapipe requires frames in RGB format for processing.
+	\item Landmark Processing: If hand landmarks are detected, their coordinates are normalized relative to reference points (e.g., the wrist and a finger joint) to ensure invariance to hand size and position.
+	\item Concatenation: The landmarks for both hands are flattened and concatenated into a single array, representing the full pose information for the frame.
 \end{enumerate}
 
 
+\section{Geometric Feature Extraction}
+\section{Model Architecture}
 
-
-\section{Multi-Hand Support}
-Multi-hand support is the capability of a hand pose recognition system to track and analyze multiple hands within the same frame simultaneously. This requires the model to distinguish between hands, assign unique identifiers, and accurately detect the landmarks for each hand. Challenges in multi-hand support include managing occlusions (where one hand partially covers the other) and handling varying hand orientations. Robust systems, like Mediapipe, employ efficient region segmentation and tracking algorithms to maintain consistent performance in multi-hand scenarios. Multi-hand support is essential for collaborative applications like multi-user gaming or shared virtual workspaces.
+\section{Pose Classification}
+\section{Pose Inference}
