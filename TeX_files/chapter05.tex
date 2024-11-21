@@ -362,9 +362,10 @@ The test loss and accuracy are calculated, and the accuracy is printed:
 \subsubsection*{5. Save the Model}
 The trained model is saved to a directory:
 \begin{lstlisting}[language=Python]
-	if not os.path.exists(output_path):
-	os.makedirs(output_path)  # Create directory if it doesn't exist
-	model.save(os.path.join(output_path, model_name))
+if not os.path.exists(output_path):
+	os.makedirs(output_path) 
+
+model.save(os.path.join(output_path, model_name))
 \end{lstlisting}
 \begin{itemize}
 	\item \texttt{output\_path}: The directory where the model will be saved.
@@ -376,8 +377,53 @@ The trained model is saved to a directory:
 This process is designed for training and evaluating a deep learning model for hand pose recognition. The hyperparameters can be adjusted based on the complexity of the dataset, and the model can be reused for predictions by loading the saved file.
 
 
-\section{Hand Pose Classification}
+\section{Inference Results of Hand Pose Classification}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.33\linewidth]{img/1} 
+	\includegraphics[width=0.33\linewidth]{img/2}
+	\includegraphics[width=0.32\linewidth]{img/3}
+	\caption{Inference of hand pose classification}
+	\label{fig:model_inference} % Reference the figure in your text using \ref{fig:unique_label}
+\end{figure}
+Figure \ref{fig:model_inference} illustrates the inference results of a TensorFlow-based hand pose classification model. The model successfully classifies hand poses into three distinct categories: "One," "Two," and "Three." Below is a detailed explanation of the components and insights derived from this result.
+
+\subsubsection*{1. Visualization of Hand Landmarks}
+The red dots and lines overlaying the hands represent the detected hand landmarks and their connections. These landmarks are extracted using a hand pose estimation framework, such as Mediapipe. Each hand is characterized by 21 key points corresponding to specific parts of the hand, including fingertips, knuckles, and the wrist. The skeletal structure formed by connecting these landmarks visually highlights the pose and is essential for feature extraction.
+
+\subsubsection*{2. Hand Pose Classification}
+The text above each image ("Prediction: One," "Prediction: Two," "Prediction: Three") displays the output of the classification model. This output is based on the features extracted from the hand landmarks and fed into the trained TensorFlow model. The model classifies the hand poses as follows:
+\begin{itemize}
+	\item \textbf{Left Image ("One")}: The model recognizes the pose where one finger is raised.
+	\item \textbf{Middle Image ("Two")}: The model identifies the pose with two fingers raised.
+	\item \textbf{Right Image ("Three")}: The model detects the pose with three fingers raised.
+\end{itemize}
+The predictions are shown in green text, indicating the model's confidence and clarity in its classification.
+
+\subsubsection*{3. Context of the Images}
+These images demonstrate a real-time application of the hand pose classification model. A person performs different hand gestures in front of a camera, and the model classifies each gesture in real-time. The inference process includes:
+\begin{enumerate}
+	\item Capturing frames from the camera.
+	\item Detecting and extracting hand landmarks.
+	\item Normalizing and preprocessing the extracted landmark features.
+	\item Feeding the features into the trained classification model to predict the hand pose.
+\end{enumerate}
+The results are displayed by overlaying the predictions and skeletal hand landmarks onto the original images.
+
+\subsubsection*{4. Application and Use Case}
+This demonstration highlights the potential applications of the hand pose classification model, which include:
+\begin{itemize}
+	\item \textbf{Sign Language Recognition}: Translating hand gestures into text or speech for communication.
+	\item \textbf{Human-Computer Interaction}: Enabling gesture-based control in devices or virtual environments.
+	\item \textbf{Gaming}: Using hand gestures as inputs for gameplay mechanics.
+	\item \textbf{Education and Training}: Assisting in teaching or monitoring hand poses in various activities.
+\end{itemize}
+
+\subsubsection*{5. Performance Indicators}
+The consistent and accurate predictions in these images demonstrate the robustness and generalizability of the model across different hand poses. The quality of the skeletal overlay further indicates the effective use of hand landmark detection as a preprocessing step.
 
 
 
-\section{Hand Pose Inference}
+
+

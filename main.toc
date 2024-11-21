@@ -32,5 +32,4 @@
 \contentsline {section}{\numberline {5.1}Hand Pose Data Training Preparation}{21}{}%
 \contentsline {subsection}{\numberline {5.1.1}Function Parameters}{24}{}%
 \contentsline {section}{\numberline {5.2}Model Training and Evaluation}{28}{}%
-\contentsline {section}{\numberline {5.3}Hand Pose Classification}{31}{}%
-\contentsline {section}{\numberline {5.4}Hand Pose Inference}{31}{}%
+\contentsline {section}{\numberline {5.3}Inference Results of Hand Pose Classification}{31}{}%
