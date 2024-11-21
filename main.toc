@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {3.2}Pose Estimation}{8}{}%
 \contentsline {subsection}{\numberline {3.2.1}Import required Python libraries}{9}{}%
 \contentsline {subsection}{\numberline {3.2.2}MediaPipe Initialization}{9}{}%
-\contentsline {subsection}{\numberline {3.2.3} Webcam Access and Directory Setup}{9}{}%
+\contentsline {subsection}{\numberline {3.2.3} Webcam Access and Directory Setup}{10}{}%
 \contentsline {subsection}{\numberline {3.2.4}Landmark Extraction}{10}{}%
 \contentsline {section}{\numberline {3.3}Geometric Feature Extraction}{10}{}%
 \contentsline {subsection}{\numberline {3.3.1}Function Definition and Initialization}{10}{}%
@@ -23,13 +23,13 @@
 \contentsline {subsection}{\numberline {3.3.3}Countdown Timer and Frame Processing}{11}{}%
 \contentsline {subsection}{\numberline {3.3.4}Frame Capture and Saving}{13}{}%
 \contentsline {subsection}{\numberline {3.3.5}Cleanup}{14}{}%
-\contentsline {section}{\numberline {3.4}Model Architecture}{14}{}%
-\contentsline {section}{\numberline {3.5}Pose Classification}{14}{}%
-\contentsline {section}{\numberline {3.6}Pose Inference}{14}{}%
-\contentsline {chapter}{\numberline {4}Fundamentals of Hand Pose Recogntion}{15}{}%
-\contentsline {section}{\numberline {4.1}Understanding Pose Recognition}{15}{}%
-\contentsline {section}{\numberline {4.2}Real-Time Hand Tracking}{15}{}%
-\contentsline {section}{\numberline {4.3}Landmark Detection}{16}{}%
-\contentsline {section}{\numberline {4.4}Model architecture}{16}{}%
-\contentsline {section}{\numberline {4.5}Pose Estimation in 3D}{17}{}%
-\contentsline {section}{\numberline {4.6}Multi-Hand Support}{17}{}%
+\contentsline {section}{\numberline {3.4}Model Architecture}{15}{}%
+\contentsline {section}{\numberline {3.5}Pose Classification}{16}{}%
+\contentsline {section}{\numberline {3.6}Pose Inference}{16}{}%
+\contentsline {chapter}{\numberline {4}Fundamentals of Hand Pose Recogntion}{17}{}%
+\contentsline {section}{\numberline {4.1}Understanding Pose Recognition}{17}{}%
+\contentsline {section}{\numberline {4.2}Real-Time Hand Tracking}{17}{}%
+\contentsline {section}{\numberline {4.3}Landmark Detection}{18}{}%
+\contentsline {section}{\numberline {4.4}Model architecture}{18}{}%
+\contentsline {section}{\numberline {4.5}Pose Estimation in 3D}{19}{}%
+\contentsline {section}{\numberline {4.6}Multi-Hand Support}{19}{}%

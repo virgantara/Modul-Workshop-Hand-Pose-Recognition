@@ -27,9 +27,18 @@
 \section{Dataset Acquisition}
 This code provides a systematic way to acquire a dataset for hand pose recognition using Mediapipe and OpenCV. It captures hand landmarks and saves the corresponding frames from a webcam feed, enabling the creation of a labeled dataset for tasks like training gesture recognition models.
 
-The process begins with the initialization and setup of necessary components. Mediapipe's Hands model is used for detecting and tracking hand landmarks, while OpenCV handles video capture and frame display. Command-line arguments allow customization of parameters such as the dataset path, label name, frame saving rate, maximum frames to save, and a delay before data collection starts. The script ensures that a directory for the dataset is created, organizing the captured data based on the provided label name.
+The process begins with the initialization and setup of necessary components. Mediapipe's Hands model is used for detecting and tracking hand landmarks, while OpenCV handles video capture and frame display. Command-line arguments allow customization of parameters such as the dataset path, label name, frame saving rate, maximum frames to save, and a delay before data collection starts. The script ensures that a directory for the dataset is created, organizing the captured data based on the provided label name. The Figure \ref{fig:data_acquisition} shows the sample of data acquisition.
 
-Hand detection and landmark extraction are key steps in the process. The Mediapipe Hands model detects 21 landmarks on each hand, including knuckles and fingertips, and supports tracking up to two hands simultaneously. For every frame captured, the script converts it to RGB format and processes it using Mediapipe. Landmark coordinates are normalized relative to specific reference points, such as the wrist and a finger joint, making the data invariant to variations in hand size and position. The normalized landmarks for both hands are then concatenated into a single array, representing the frame’s hand pose data.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{img/data_cap1} 
+	\includegraphics[width=0.3\linewidth]{img/data_cap2}
+	\includegraphics[width=0.3\linewidth]{img/data_cap3}
+	\caption{Sample of Data Acquisition Process}
+	\label{fig:data_acquisition} % Reference the figure in your text using \ref{fig:unique_label}
+\end{figure}
+
+ Hand detection and landmark extraction are key steps in the process. The Mediapipe Hands model detects 21 landmarks on each hand, including knuckles and fingertips, and supports tracking up to two hands simultaneously. For every frame captured, the script converts it to RGB format and processes it using Mediapipe. Landmark coordinates are normalized relative to specific reference points, such as the wrist and a finger joint, making the data invariant to variations in hand size and position. The normalized landmarks for both hands are then concatenated into a single array, representing the frame’s hand pose data.
 
 \section{Pose Estimation}
 
@@ -251,6 +260,57 @@ The webcam feed is processed frame by frame. During the countdown period, a mess
 After reaching the specified frame limit or upon user interruption, the function releases the webcam and closes all OpenCV windows. The Mediapipe Hands object is also closed, ensuring that all resources are properly deallocated. This function effectively combines pose estimation, real-time feedback, and dataset organization, making it a comprehensive tool for collecting hand pose data.
 \section{Model Architecture}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{img/model_architecture} % Adjust the width or other parameters as needed
+	\caption{Model Architecture}
+	\label{fig:model_architecture} % Reference the figure in your text using \ref{fig:unique_label}
+\end{figure}
 
+This model represents a simple feed-forward neural network designed for tasks such as classification, particularly for hand pose recognition. The architecture utilizes Convolutional Neural Network (CNN) model implemented in TensorFlow, specifically designed for tasks involving 1D data, such as time-series analysis, signal processing, or structured data (like hand pose landmarks).
+
+\begin{lstlisting}
+	Reshape((input_size, 1), input_shape=(input_size,))
+\end{lstlisting}
+
+This layer reshapes the 1D input vector of size \verb|(input_size,)| into a 2D array with dimensions \verb|(input_size, 1)|. This transformation is necessary because Conv1D layers require a 2D input format where one dimension represents the sequence length \verb|(input_size)|, and the other represents the number of channels (here, a single channel).
+
+The reshaped input is then passed to the first Conv1D layer:
+\begin{lstlisting}
+	Conv1D(filters=32, kernel_size=3, activation='relu')
+\end{lstlisting}
+
+This layer applies 32 convolutional filters with a kernel size of 3 to extract local patterns from the data. The \verb|relu| activation introduces non-linearity, enabling the model to learn complex features. The next layer is another Conv1D layer:
+\begin{lstlisting}
+	Conv1D(filters=64, kernel_size=3, activation='relu')
+\end{lstlisting}
+This layer increases the number of filters to 64, allowing it to capture more complex patterns and higher-level features from the output of the previous layer. Both convolutional layers reduce the dimensions of the input while retaining its essential features.
+
+After the convolutional layers, a Flatten layer:
+\begin{lstlisting}
+	Flatten()
+\end{lstlisting}
+is used to convert the multi-dimensional output from the Conv1D layers into a 1D vector. For example, if the output from the second Conv1D layer is of shape (80, 64), the Flatten layer transforms it into a vector of size (80 * 64 = 5120). This step prepares the data for the subsequent fully connected layers.
+
+The flattened output is fed into a Dense layer:
+\begin{lstlisting}
+	Dense(128, activation='relu')
+\end{lstlisting}
+
+which consists of 128 neurons. Each neuron applies a linear transformation followed by a \verb|relu| activation function to learn combinations of features extracted by the convolutional layers. This dense layer reduces the feature space while focusing on the most significant patterns.
+
+To prevent overfitting, the model includes a Dropout layer:
+\begin{lstlisting}
+	Dropout(0.5)
+\end{lstlisting}
+which randomly deactivates 50\% of the neurons during training. This regularization technique ensures that the model does not rely too heavily on specific neurons, improving its ability to generalize to unseen data.
+
+Finally, the model ends with an output Dense layer:
+\begin{lstlisting}
+	Dense(num_classes, activation='softmax')
+\end{lstlisting}
+This layer has a number of neurons equal to the number of target classes (\verb|num_classes|). The \verb|softmax| activation function converts the raw outputs into probabilities for each class, ensuring that the sum of all probabilities equals 1. This makes it suitable for multi-class classification tasks.
+
+Overall, the model starts with reshaping the input, extracts meaningful features using convolutional layers, flattens the extracted features, and uses dense layers for classification, with dropout for regularization. The final softmax layer outputs class probabilities, making it effective for tasks like hand pose classification or time-series analysis.
 \section{Pose Classification}
 \section{Pose Inference}
